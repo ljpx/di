@@ -9,3 +9,9 @@ type Container interface {
 	Resolve(dependencies ...interface{}) error
 	Fork() Container
 }
+
+// NewContainer creates and returns a new, empty container.  It is an alias for
+// NewDefaultContainer.
+func NewContainer() Container {
+	return NewDefaultContainer()
+}

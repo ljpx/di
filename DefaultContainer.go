@@ -15,8 +15,9 @@ type DefaultContainer struct {
 
 var _ Container = &DefaultContainer{}
 
-// NewContainer creates and returns a new, empty container.
-func NewContainer() Container {
+// NewDefaultContainer creates and returns a new, empty container using the
+// default container implementation.
+func NewDefaultContainer() *DefaultContainer {
 	return &DefaultContainer{
 		resolverScopes: make(map[reflect.Type]Scope),
 		mx:             &sync.RWMutex{},
